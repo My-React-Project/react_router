@@ -3,9 +3,12 @@ import { Link } from 'react-router';
 import './Header.css';
 
 const MenuItem = ({active, children, to}) => (
-  <div className="menu-item">
+  /*
+    Link : 페이지를 새로 로딩할 필요 없이 지정된 Component를 보여줄때 사용
+  */
+  <Link to={to} className="menu-item">
     {children}
-  </div>
+  </Link>
 )
 
 const Header = () => {
@@ -15,9 +18,9 @@ const Header = () => {
         jaewoong
       </div>
       <div className="menu">
-        <MenuItem>Home</MenuItem>
-        <MenuItem>Intro</MenuItem>
-        <MenuItem>Posts</MenuItem>
+        <MenuItem to={'/'}>Home</MenuItem>
+        <MenuItem to={'/about'}>About</MenuItem>
+        <MenuItem to={'/posts'}>Posts</MenuItem>
       </div>
     </div>
   );
